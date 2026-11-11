@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "schemas": [
+    {
+      "schema_id": 1,
+      "fields": [
+        {
+          "field_id": 1,
+          "name": "book_key",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "field_id": 2,
+          "name": "purchase_day",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "field_id": 3,
+          "name": "price",
+          "type": "int32",
+          "nullable": false
+        }
+      ]
+    }
+  ],
+  "partition_specs": [
+    {
+      "partition_spec_id": 1,
+      "field_id": 2,
+      "transform": "month",
+      "name": "purchase_month"
+    }
+  ],
+  "files": [
+    {
+      "file_id": "old1",
+      "path": "data/old.jsonl",
+      "schema_id": 1,
+      "partition_spec_id": 1,
+      "partition": {
+        "purchase_month": "2026-09"
+      }
+    }
+  ]
+}

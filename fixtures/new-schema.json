@@ -1,0 +1,42 @@
+{
+  "schema_id": 2,
+  "fields": [
+    {
+      "field_id": 1,
+      "name": "book_key",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "field_id": 2,
+      "name": "purchase_day",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "field_id": 3,
+      "name": "list_price",
+      "type": "int64",
+      "nullable": false
+    },
+    {
+      "field_id": 4,
+      "name": "shelf_date",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "field_id": 5,
+      "name": "edition",
+      "type": "string",
+      "nullable": false,
+      "default": "初版"
+    }
+  ],
+  "partition_spec": {
+    "partition_spec_id": 2,
+    "field_id": 4,
+    "transform": "day",
+    "name": "shelf_day"
+  }
+}
